@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result | Smart Lender</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="result-card">
+
+        <h1>🏦 Smart Lender</h1>
+
+        <h2>Loan Prediction Result</h2>
+
+        {% if prediction == "✅ Loan Approved" %}
+
+            <h1 style="color:green;">{{ prediction }}</h1>
+
+            <p>
+                Congratulations! Based on the applicant's information,
+                the machine learning model predicts that the loan is likely
+                to be approved.
+            </p>
+
+        {% else %}
+
+            <h1 style="color:red;">{{ prediction }}</h1>
+
+            <p>
+                Based on the applicant's information,
+                the machine learning model predicts that the loan is likely
+                to be rejected.
+            </p>
+
+        {% endif %}
+
+        <br><br>
+
+        <a href="/">
+            <button>🔄 Predict Another Loan</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

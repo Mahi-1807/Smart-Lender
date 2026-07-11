@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Lender - Loan Approval Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🏦 Smart Lender</h1>
+        <p>AI-Powered Loan Approval Prediction System</p>
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <div class="grid">
+
+            <div class="input-box">
+                <label>Gender</label>
+                <select name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Married</label>
+                <select name="married">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Dependents</label>
+                <select name="dependents">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3+</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Education</label>
+                <select name="education">
+                    <option>Graduate</option>
+                    <option>Not Graduate</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Self Employed</label>
+                <select name="self_employed">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Applicant Income</label>
+                <input type="number" name="applicant_income" required>
+            </div>
+
+            <div class="input-box">
+                <label>Co-Applicant Income</label>
+                <input type="number" name="coapplicant_income" required>
+            </div>
+
+            <div class="input-box">
+                <label>Loan Amount</label>
+                <input type="number" name="loan_amount" required>
+            </div>
+
+            <div class="input-box">
+                <label>Loan Term (Months)</label>
+                <input type="number" name="loan_amount_term" value="360" required>
+            </div>
+
+            <div class="input-box">
+                <label>Credit History</label>
+                <select name="credit_history">
+                    <option value="1">Good</option>
+                    <option value="0">Bad</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Property Area</label>
+                <select name="property_area">
+                    <option>Urban</option>
+                    <option>Semiurban</option>
+                    <option>Rural</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="button-area">
+            <button type="submit">Predict Loan Status</button>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
